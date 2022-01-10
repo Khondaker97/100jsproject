@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hex Color Code</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h3>Hex Color Code</h3>
+            <p>Hex code: <span class="code"> </span> </p>
+        </header>
+    
+        <div class="button">
+            <button class="btn">Click Me!</button>
+        </div>
+    </section>
+
+    <script>
+        const button = document.querySelector('.btn');
+        const body = document.querySelector('body');
+        const code = document.querySelector('.code');
+        const hexValues =[0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+
+        button.addEventListener("click", ()=>{
+            let hex ="#";
+            for(let i =0; i<6; i++){
+                const index = Math.floor(Math.random()*hexValues.length);
+                hex += hexValues[index];
+            }
+            code.textContent = hex;
+            body.style.background = hex;
+        });
+        
+    </script>
+</body>
+</html>
